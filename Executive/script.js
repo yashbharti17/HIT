@@ -7,13 +7,12 @@ async function authenticate() {
 
   if (email && password) {
     // Send the data to the backend for verification
-    const response = await fetch("https://hit-production.up.railway.app:8080/authenticate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch("https://hit-production.up.railway.app/authenticate", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, password }),
+});
+
 
     const result = await response.json();
     // console.log(result); // Log the result from the backend

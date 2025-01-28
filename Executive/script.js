@@ -7,7 +7,7 @@ async function authenticate() {
 
   if (email && password) {
     // Send the data to the backend for verification
-    const response = await fetch("http://localhost:3000/authenticate", {
+    const response = await fetch("http://localhost:8080/authenticate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

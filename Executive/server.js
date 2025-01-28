@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000; // ✅ Updated to support Render's dynamic PORT
+const PORT = process.env.PORT || 8080; // ✅ Updated to support Render's dynamic PORT
 
 // Middleware
 app.use(bodyParser.json());

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive Page</title>
+  </head>
+  <body>
+    <h1>Executive Panel</h1>
+
+    <!-- Job Options -->
+    <label for="job-select">Select a Job:</label>
+    <select id="job-select" required>
+      <option value="" disabled selected>--Choose a Job--</option>
+      <option value="BA">Business Analyst (BA)</option>
+      <option value="QA">Quality Analyst (QA)</option>
+      <option value="Clerical">Clerical</option>
+      <option value="PM">Project Manager (PM)</option>
+      <option value="Dev">Developer</option>
+    </select>
+
+    <!-- Table to Display Candidates -->
+
+    <table
+      id="candidates-table"
+      style="
+        margin-top: 20px;
+        display: none;
+        border: 1px solid black;
+        border-collapse: collapse;
+      "
+    >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated dynamically -->
+      </tbody>
+    </table>
+  </body>
+</html>

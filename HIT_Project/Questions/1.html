@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/fullscreen.js"></script>
+    <!-- <script src="../timer.js"></script> -->
+  </head>
+
+  <body>
+    <div class="container">
+      <!--<header>
+         Timer Display
+         Display the timer in the top-right corner 
+        <div
+          id="timer"
+          style="
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+          "
+        ></div>
+      </header>-->
+
+      <h2>Assessment</h2>
+      <!-- Question 1 -->
+      <div class="question">
+        <label for="q1"
+          >I follow through on my commitments, even when they become
+          challenging. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q1" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q1" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q1" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q1" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q1" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q1" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q1" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 2 -->
+      <div class="question">
+        <label for="q2"
+          >I treat everyone at work with respect, regardless of their role or
+          background. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q2" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q2" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q2" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q2" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q2" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q2" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q2" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 3 -->
+      <div class="question">
+        <label for="q3"
+          >I prefer working in a team rather than on my own when tackling
+          complex tasks.</label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q3" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q3" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q3" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q3" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q3" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q3" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q3" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 4 -->
+      <div class="question">
+        <label for="q4"
+          >I adapt my communication style to suit the needs of different
+          individuals or situations. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q4" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q4" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q4" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q4" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q4" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q4" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q4" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 5 -->
+      <div class="question">
+        <label for="q5"
+          >I actively seek out experiences that broaden my understanding of the
+          world. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q5" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q5" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q5" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q5" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q5" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q5" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q5" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 6 -->
+      <div class="question">
+        <label for="q6"
+          >I’m excited to learn skills that help me perform better in my role. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q6" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q6" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q6" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q6" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q6" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q6" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q6" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 7 -->
+      <div class="question">
+        <label for="q7"
+          >I recognize and nurture the strengths of team members to enhance
+          overall performance. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q7" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q7" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q7" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q7" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q7" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q7" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q7" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 8 -->
+      <div class="question">
+        <label for="q8"
+          >Others find me approachable, and I often serve as a point of
+          connection in group settings.</label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q8" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q8" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q8" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q8" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q8" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q8" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q8" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 9 -->
+      <div class="question">
+        <label for="q9"
+          >Working alongside others improves my creativity and helps me generate
+          new ideas.</label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q9" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q9" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q9" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q9" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q9" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q9" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q9" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <!-- Question 10 -->
+      <div class="question">
+        <label for="q10"
+          >I work well with others to achieve shared goals, even if it requires
+          compromise. </label
+        ><br /><br />
+        <div class="options">
+          <label>
+            <input type="radio" name="q10" value="Strongly Disagree" />
+            Strongly Disagree
+          </label>
+          <label>
+            <input type="radio" name="q10" value="Disagree" />Disagree
+          </label>
+          <label>
+            <input type="radio" name="q10" value="Somewhat disagree" />
+            Somewhat disagree
+          </label>
+          <label>
+            <input type="radio" name="q10" value="Neutral" /> Neutral
+          </label>
+          <label>
+            <input type="radio" name="q10" value="Somewhat Agree" /> Somewhat
+            Agree
+          </label>
+          <label> <input type="radio" name="q10" value="Agree" /> Agree </label>
+          <label>
+            <input type="radio" name="q10" value="Strongly Agree" /> Strongly
+            Agree
+          </label>
+        </div>
+      </div>
+      <br /><br />
+      <button onclick="loadHtml(2)">Next</button>
+    </div>
+    <!-- <script src="../back-button-prevention.js"></script> -->
+  </body>
+</html>

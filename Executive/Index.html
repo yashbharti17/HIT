@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheet Data</title>
+</head>
+<body>
+  <h2>Google Sheet Data</h2>
+  <table border="1" id="data-table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Zip Code</th>
+        <th>Education</th>
+        <th>Experience</th>
+        <th>Applied For</th>
+        <th>Certificates</th>
+        <th>Skills</th>
+        <th>Comment</th>
+        <th>File URL</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+  async function fetchData() {
+  const response = await fetch('https://script.google.com/macros/s/AKfycbw3HDh-y-K0cTIZ72uyE225bVtgLbHU3lgjxLbOrvc-HGrqKVIuxLo4uC02RFKnjRpV/exec');
+  const data = await response.json();
+
+  console.log(data); // Debugging: Check if "apply-job" is correctly fetched
+
+  const tableBody = document.querySelector("#data-table tbody");
+  data.forEach(row => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${row["first-name"] || ""}</td>
+      <td>${row["last-name"] || ""}</td>
+      <td>${row["phone"] || ""}</td>
+      <td>${row["email-address"] || ""}</td>
+      <td>${row["address"] || ""}</td>
+      <td>${row["zip-code"] || ""}</td>
+      <td>${row["education"] || ""}</td>
+      <td>${row["experience"] || ""}</td>
+      <td>${row["apply-job"] || ""}</td> <!-- Ensure this is placed before certificates -->
+      <td>${row["certificates"] || ""}</td>
+      <td>${row["skills"] || ""}</td>
+      <td>${row["comment"] || ""}</td>
+      <td><a href="${row["file url"]}" target="_blank">View File</a></td>
+    `;
+    tableBody.appendChild(tr);
+  });
+}
+
+fetchData();
+
+  </script>
+  
+</body>
+</html>

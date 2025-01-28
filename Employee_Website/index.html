@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Job Application Form</title>
+    <script>
+      function toggleCertificateInput() {
+        const certificationStatus = document.getElementById(
+          "certification-status"
+        ).value;
+        const certificateNameField = document.getElementById(
+          "certificate-name-field"
+        );
+        const dynamicSpacingBefore = document.getElementById(
+          "dynamic-spacing-before"
+        );
+        const dynamicSpacingAfter = document.getElementById(
+          "dynamic-spacing-after"
+        );
+
+        if (certificationStatus === "yes") {
+          certificateNameField.style.display = "block";
+          dynamicSpacingBefore.innerHTML = "<br>"; // Add 1 line breaks before
+          dynamicSpacingAfter.innerHTML = "<br>"; // no line breaks after
+        } else {
+          certificateNameField.style.display = "none";
+          document.getElementById("certificate-name").value = ""; // Clear input if hidden
+          dynamicSpacingBefore.innerHTML = ""; // Remove additional line breaks
+          dynamicSpacingAfter.innerHTML = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Job Application Form</h2>
+    <form action="backend.php" method="POST" enctype="multipart/form-data">
+      <!-- Position ID -->
+      <label for="positionId">Position ID:</label>
+      <input
+        type="text"
+        id="positionId"
+        name="positionId"
+        placeholder="Enter Position ID"
+        required
+      />
+
+      <br /><br />
+
+      <!-- Position Title -->
+      <label for="positionTitle">Position Title:</label>
+      <input
+        type="text"
+        id="positionTitle"
+        name="positionTitle"
+        placeholder="Enter Position Title"
+        required
+      />
+
+      <br /><br />
+
+      <!-- Job Classification -->
+      <label for="job-classification">Job Classification:</label>
+      <select id="job-classification" name="job-classification" required>
+        <option value="" disabled selected>Select Job Classification</option>
+        <option value="BA">BA</option>
+        <option value="PM">PM</option>
+        <option value="Clerical">Clerical</option>
+        <option value="QA">QA</option>
+        <option value="Dev">Dev</option>
+      </select>
+
+      <br /><br />
+
+      <!-- Experience -->
+      <label for="experience">Experience: </label>
+      <select id="experience" name="experience" required>
+        <option value="" disabled selected>Select Experience</option>
+        <option value="less_than_1">Less than 1 year</option>
+        <option value="1_2">1-2 years</option>
+        <option value="3_5">3-5 years</option>
+        <option value="more_than_5">More than 5 years</option>
+      </select>
+
+      <br /><br />
+
+      <!-- Education -->
+      <label for="education">Education: </label>
+      <select id="education" name="education" required>
+        <option value="" disabled selected>Select Education</option>
+        <option value="bs">Bachelor's</option>
+        <option value="ms">Master's</option>
+      </select>
+
+      <br /><br />
+
+      <!-- Location Zip Code -->
+      <label for="zipcode">Location Zip Code:</label>
+      <input
+        type="number"
+        id="zipcode"
+        name="zipcode"
+        placeholder="Enter 5-digit Zip Code"
+        maxlength="5"
+        oninput="this.value = this.value.slice(0, 5);"
+        required
+      />
+
+      <br /><br />
+
+      <!-- Certificate Needed -->
+      <label for="certification-status"
+        >Have you done any certification(s)?</label
+      >
+      <select
+        id="certification-status"
+        name="certification-status"
+        onchange="toggleCertificateInput()"
+        required
+      >
+        <option value="" disabled selected>Select Option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <div id="dynamic-spacing-before"></div>
+
+      <div id="certificate-name-field" style="display: none; margin-top: 10px">
+        <label for="certificate-name">Name of Certificate(s):</label>
+        <input
+          type="text"
+          id="certificate-name"
+          name="certificate-name"
+          placeholder="Enter certificate name(s)"
+        />
+      </div>
+
+      <div id="dynamic-spacing-after"></div>
+
+      <br />
+
+      <!-- Organization Level -->
+      <label for="organization">Organization: </label>
+      <select id="organization" name="organization" required>
+        <option value="" disabled selected>Select Organization</option>
+        <option value="junior">Junior</option>
+        <option value="senior">Senior</option>
+        <option value="management">Management</option>
+      </select>
+
+      <br /><br />
+
+      <!-- Attitude -->
+      <label for="attitude">Attitude: </label>
+      <select id="attitude" name="attitude" required>
+        <option value="" disabled selected>Select Attitude</option>
+        <option value="driven">Driven</option>
+        <option value="ce">Cost-effective</option>
+      </select>
+
+      <br /><br />
+
+      <!-- Comments -->
+      <label for="comments">Comments: </label>
+      <textarea
+        id="comments"
+        name="comments"
+        placeholder="Enter Comments"
+      ></textarea>
+
+      <br /><br />
+
+      <!-- Attachments -->
+      <label for="attachments">Attachments (PDF, TXT only): </label>
+      <input
+        type="file"
+        id="attachments"
+        name="attachments"
+        accept=".pdf,.txt"
+      />
+
+      <br /><br />
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

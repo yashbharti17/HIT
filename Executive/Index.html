@@ -4,9 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sheet Data</title>
+  <link rel="stylesheet" href="executive.css">
 </head>
 <body>
-  <h2>Google Sheet Data</h2>
+  <h1>Executive Panel</h1>
+
+    <!-- Job Options -->
+    <label for="job-select">Select a Job:</label>
+    <select id="job-select" required>
+      <option value="" disabled selected>--Choose a Job--</option>
+      <option value="BA">Business Analyst (BA)</option>
+      <option value="QA">Quality Analyst (QA)</option>
+      <option value="Clerical">Clerical</option>
+      <option value="PM">Project Manager (PM)</option>
+      <option value="Dev">Developer</option>
+    </select>
   <table border="1" id="data-table">
     <thead>
       <tr>
@@ -29,14 +41,24 @@
   </table>
 
   <script>
-  async function fetchData() {
+ let allData = []; // Global variable to store all fetched data
+
+async function fetchData() {
   const response = await fetch('https://script.google.com/macros/s/AKfycbw3HDh-y-K0cTIZ72uyE225bVtgLbHU3lgjxLbOrvc-HGrqKVIuxLo4uC02RFKnjRpV/exec');
   const data = await response.json();
 
-  console.log(data); // Debugging: Check if "apply-job" is correctly fetched
+  console.log("Fetched Data:", data); // Debugging: Ensure "apply-job" is correctly fetched
 
+  allData = data; // Store the full dataset for filtering
+
+}
+
+// Function to filter and display the table
+function renderTable(filteredData) {
   const tableBody = document.querySelector("#data-table tbody");
-  data.forEach(row => {
+  tableBody.innerHTML = ""; // Clear existing table rows
+
+  filteredData.forEach(row => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${row["first-name"] || ""}</td>
@@ -47,17 +69,34 @@
       <td>${row["zip-code"] || ""}</td>
       <td>${row["education"] || ""}</td>
       <td>${row["experience"] || ""}</td>
-      <td>${row["apply-job"] || ""}</td> <!-- Ensure this is placed before certificates -->
+      <td>${row["apply-job"] || ""}</td> 
       <td>${row["certificates"] || ""}</td>
       <td>${row["skills"] || ""}</td>
       <td>${row["comment"] || ""}</td>
-      <td><a href="${row["file url"]}" target="_blank">View File</a></td>
+      <td><a href="${row["file url"] || "#"}" target="_blank">View File</a></td>
     `;
     tableBody.appendChild(tr);
   });
 }
 
+// Function to filter data based on dropdown selection
+function filterData() {
+  const selectedJob = document.getElementById("job-select").value;
+  
+  if (selectedJob) {
+    const filteredData = allData.filter(row => row["apply-job"] === selectedJob);
+    renderTable(filteredData);
+  } else {
+    renderTable(allData); // Show all data if no filter is selected
+  }
+}
+
+// Event listener for dropdown selection
+document.getElementById("job-select").addEventListener("change", filterData);
+
+// Fetch data when page loads
 fetchData();
+
 
   </script>
   

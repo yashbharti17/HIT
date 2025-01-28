@@ -14,16 +14,10 @@ app.use(cors());
 const authorizedUsers = [
   {
     email: "taniyasharma20003@gmail.com",
-    password: "$2b$10$D1Gq10UzWw2j6Usmi3j/E.qclpf7EZg0qHt6QkKwVEJ1.e.K1aPxi",
+    password: bcrypt.hashSync("admin", 10),
   },
-  {
-    email: "praveen070112@gmail.com",
-    password: "$2b$10$D1Gq10UzWw2j6Usmi3j/E.qclpf7EZg0qHt6QkKwVEJ1.e.K1aPxi",
-  },
-  {
-    email: "anyagl2006@gmail.com",
-    password: "$2b$10$D1Gq10UzWw2j6Usmi3j/E.qclpf7EZg0qHt6QkKwVEJ1.e.K1aPxi",
-  },
+  { email: "praveen070112@gmail.com", password: bcrypt.hashSync("admin", 10) },
+  { email: "anyagl2006@gmail.com", password: bcrypt.hashSync("admin", 10) },
 ];
 
 // Authenticate endpoint
